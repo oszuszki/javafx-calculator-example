@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
+
 public class CalculatorController {
 
     @FXML
@@ -55,4 +56,25 @@ public class CalculatorController {
         }
     }
 
+
+
+    @FXML
+    public void allClear(ActionEvent event) {
+        number1 = 0;
+        operator = "";
+        startNumber = true;
+        display.setText("0");
+    }
+
+    public void denaryDot(ActionEvent event) {
+        String n = display.getText();
+        String dot = ".";
+        display.setText(n + dot);
+    }
+
+    public void presageOperator(ActionEvent event) {
+        double po = Double.parseDouble(String.valueOf(display.getText()));
+        po = po * (-1);
+        display.setText(String.valueOf(po));
+    }
 }
